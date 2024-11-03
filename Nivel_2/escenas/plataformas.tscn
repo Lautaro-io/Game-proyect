@@ -1,0 +1,298 @@
+[gd_scene load_steps=22 format=3 uid="uid://bhkqx4sxkn6yx"]
+
+[ext_resource type="TileSet" uid="uid://82wmp5mdbth2" path="res://tilesets vikings/terreno.tres" id="1_f5scd"]
+
+[sub_resource type="Curve2D" id="Curve2D_kj3l6"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 23.0854, 68.6527, 0, 0, 0, 0, 23.0854, -410.347)
+}
+point_count = 2
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3llrm"]
+size = Vector2(15, 94)
+
+[sub_resource type="Animation" id="Animation_f66ys"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PathFollow2D:progress_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_8kpsc"]
+resource_name = "move"
+length = 3.0
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PathFollow2D:progress_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_45rmy"]
+_data = {
+"RESET": SubResource("Animation_f66ys"),
+"move": SubResource("Animation_8kpsc")
+}
+
+[sub_resource type="Curve2D" id="Curve2D_sbdkh"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 4, -55, 0, 0, 0, 0, 211.76, -351.542)
+}
+point_count = 2
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rqu55"]
+size = Vector2(13, 93)
+
+[sub_resource type="Animation" id="Animation_i3g4b"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PathFollow2D:progress_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_hcjvj"]
+resource_name = "move"
+length = 2.0
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PathFollow2D:progress_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ymrbt"]
+_data = {
+"RESET": SubResource("Animation_i3g4b"),
+"move": SubResource("Animation_hcjvj")
+}
+
+[sub_resource type="Curve2D" id="Curve2D_tcdgj"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 666, -11, 0, 0, 0, 0, 665.248, -137.844, 0, 0, 0, 0, 668, -300)
+}
+point_count = 3
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dkdey"]
+size = Vector2(93, 14)
+
+[sub_resource type="Animation" id="Animation_74bcw"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PathFollow2D:progress_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_ckdxg"]
+resource_name = "moviment"
+length = 2.3
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PathFollow2D:progress_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xij84"]
+_data = {
+"RESET": SubResource("Animation_74bcw"),
+"moviment": SubResource("Animation_ckdxg")
+}
+
+[sub_resource type="Curve2D" id="Curve2D_33xyu"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 821, -424, 0, 0, 0, 0, 1044, -657)
+}
+point_count = 2
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ae7lh"]
+size = Vector2(94, 14)
+
+[sub_resource type="Animation" id="Animation_ikkxl"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PathFollow2D:progress_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_5s07l"]
+resource_name = "move"
+length = 1.9
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PathFollow2D:progress_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.9),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_r7fts"]
+_data = {
+"RESET": SubResource("Animation_ikkxl"),
+"move": SubResource("Animation_5s07l")
+}
+
+[node name="Plataformas" type="Node2D"]
+position = Vector2(125, 414)
+
+[node name="Plataforma2" type="Path2D" parent="."]
+z_index = 1
+position = Vector2(212, 255)
+curve = SubResource("Curve2D_kj3l6")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Plataforma2"]
+position = Vector2(23.0854, -117.347)
+rotation = -1.5708
+progress = 186.0
+
+[node name="CharacterBody2D" type="StaticBody2D" parent="Plataforma2/PathFollow2D"]
+
+[node name="TileMap" type="TileMap" parent="Plataforma2/PathFollow2D/CharacterBody2D"]
+tile_set = ExtResource("1_f5scd")
+format = 2
+layer_0/tile_data = PackedInt32Array(-131073, 327680, 1879048192, -65537, 262144, 1879048192, -1, 196608, 1879048192, 65535, 131072, 1879048192, 131071, 65536, 1879048192, 196607, 0, 1879048192)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Plataforma2/PathFollow2D/CharacterBody2D"]
+position = Vector2(-8.5, 0)
+shape = SubResource("RectangleShape2D_3llrm")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Plataforma2"]
+libraries = {
+"": SubResource("AnimationLibrary_45rmy")
+}
+autoplay = "move"
+
+[node name="Plataforma3" type="Path2D" parent="."]
+position = Vector2(371.24, 16.5416)
+curve = SubResource("Curve2D_sbdkh")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Plataforma3"]
+position = Vector2(4, -55)
+rotation = 1.5708
+rotates = false
+
+[node name="CharacterBody2D" type="StaticBody2D" parent="Plataforma3/PathFollow2D"]
+
+[node name="TileMap" type="TileMap" parent="Plataforma3/PathFollow2D/CharacterBody2D"]
+position = Vector2(-9.54156, -0.760439)
+tile_set = ExtResource("1_f5scd")
+format = 2
+layer_0/tile_data = PackedInt32Array(-196608, 327680, 1610612736, -131072, 262144, 1610612736, -65536, 196608, 1610612736, 0, 131072, 1610612736, 65536, 65536, 1610612736, 131072, 0, 1610612736)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Plataforma3/PathFollow2D/CharacterBody2D"]
+position = Vector2(-1.54157, -1.76044)
+shape = SubResource("RectangleShape2D_rqu55")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Plataforma3"]
+libraries = {
+"": SubResource("AnimationLibrary_ymrbt")
+}
+autoplay = "move"
+
+[node name="plataforma4" type="Path2D" parent="."]
+position = Vector2(48, -215)
+curve = SubResource("Curve2D_tcdgj")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="plataforma4"]
+position = Vector2(666, -11)
+rotates = false
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="plataforma4/PathFollow2D"]
+
+[node name="TileMap" type="TileMap" parent="plataforma4/PathFollow2D/CharacterBody2D"]
+tile_set = ExtResource("1_f5scd")
+format = 2
+layer_0/tile_data = PackedInt32Array(65533, 0, 0, 65534, 65536, 0, 65535, 131072, 0, 0, 196608, 0, 1, 262144, 0, 2, 327680, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="plataforma4/PathFollow2D/CharacterBody2D"]
+position = Vector2(0.5, 8)
+shape = SubResource("RectangleShape2D_dkdey")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="plataforma4"]
+libraries = {
+"": SubResource("AnimationLibrary_xij84")
+}
+autoplay = "moviment"
+
+[node name="Plataforma5" type="Path2D" parent="."]
+curve = SubResource("Curve2D_33xyu")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Plataforma5"]
+position = Vector2(1044, -657)
+progress = 322.518
+rotates = false
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="Plataforma5/PathFollow2D"]
+
+[node name="TileMap" type="TileMap" parent="Plataforma5/PathFollow2D/CharacterBody2D"]
+tile_set = ExtResource("1_f5scd")
+format = 2
+layer_0/tile_data = PackedInt32Array(65533, 0, 0, 65534, 65536, 0, 65535, 131072, 0, 0, 196608, 0, 1, 262144, 0, 2, 327680, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Plataforma5/PathFollow2D/CharacterBody2D"]
+position = Vector2(0, 8)
+shape = SubResource("RectangleShape2D_ae7lh")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Plataforma5"]
+libraries = {
+"": SubResource("AnimationLibrary_r7fts")
+}
+autoplay = "move"

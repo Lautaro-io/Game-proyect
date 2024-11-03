@@ -1,0 +1,50 @@
+[gd_scene load_steps=9 format=3 uid="uid://ciotgtbkxaklc"]
+
+[ext_resource type="Texture2D" uid="uid://6rsqwmbqhfs4" path="res://Assets/NPCs/Idle1/1.png" id="1_anugc"]
+[ext_resource type="Script" path="res://scenes/NPC.gd" id="1_qrks5"]
+[ext_resource type="Texture2D" uid="uid://bg642wptk7sev" path="res://Assets/NPCs/Idle1/2.png" id="2_swtge"]
+[ext_resource type="Texture2D" uid="uid://fm7ejnx5o6gy" path="res://Assets/NPCs/Idle1/3.png" id="3_chryw"]
+[ext_resource type="Texture2D" uid="uid://wkofsp1jybp1" path="res://Assets/NPCs/Idle1/4.png" id="4_o5onm"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n1ye2"]
+atlas = ExtResource("1_anugc")
+region = Rect2(0, 0, 94, 91)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_l223c"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n1ye2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_swtge")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_chryw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_o5onm")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 8.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f3nt1"]
+size = Vector2(56, 73.5)
+
+[node name="NPC" type="StaticBody2D"]
+z_index = -1
+script = ExtResource("1_qrks5")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_l223c")
+animation = &"idle"
+frame_progress = 0.0779009
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+z_index = -1
+position = Vector2(0, -2.75)
+shape = SubResource("RectangleShape2D_f3nt1")
+disabled = true

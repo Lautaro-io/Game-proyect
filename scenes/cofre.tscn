@@ -1,0 +1,75 @@
+[gd_scene load_steps=12 format=3 uid="uid://ly2nqkqqfug8"]
+
+[ext_resource type="Script" path="res://scenes/cofre.gd" id="1_fdhfa"]
+[ext_resource type="Texture2D" uid="uid://dy872uqxidjbq" path="res://Assets/TX Chest Animation.png" id="1_xdwy2"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rjcms"]
+atlas = ExtResource("1_xdwy2")
+region = Rect2(0, 192, 68, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vfvk0"]
+atlas = ExtResource("1_xdwy2")
+region = Rect2(68, 192, 68, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hq35y"]
+atlas = ExtResource("1_xdwy2")
+region = Rect2(136, 192, 68, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_grttu"]
+atlas = ExtResource("1_xdwy2")
+region = Rect2(204, 192, 68, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mgbd5"]
+atlas = ExtResource("1_xdwy2")
+region = Rect2(272, 192, 68, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w0bu6"]
+atlas = ExtResource("1_xdwy2")
+region = Rect2(340, 192, 68, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o4o04"]
+atlas = ExtResource("1_xdwy2")
+region = Rect2(408, 192, 68, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hbwuy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rjcms")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vfvk0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hq35y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_grttu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mgbd5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w0bu6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o4o04")
+}],
+"loop": false,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_182lo"]
+size = Vector2(30, 25)
+
+[node name="Cofre" type="StaticBody2D"]
+script = ExtResource("1_fdhfa")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_hbwuy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(14, 17.5)
+shape = SubResource("RectangleShape2D_182lo")

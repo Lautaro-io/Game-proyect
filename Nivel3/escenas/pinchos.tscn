@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://c0i4806cbsdm"]
+
+[ext_resource type="Script" path="res://Nivel3/escenas/pinchos.gd" id="1_s517c"]
+[ext_resource type="Texture2D" uid="uid://c2wbrae51b8i2" path="res://Nivel3/assets/Pixel Art Platformer - Village Props v2.3.0/Texture/TX Village Props.png" id="2_ugafq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cank6"]
+size = Vector2(30, 13)
+
+[node name="Pinchos" type="Area2D"]
+script = ExtResource("1_s517c")
+
+[node name="pinchos" type="Sprite2D" parent="."]
+position = Vector2(7.875, 2)
+scale = Vector2(0.975806, 1.33333)
+texture = ExtResource("2_ugafq")
+region_enabled = true
+region_rect = Rect2(799.379, 118.453, 31.5997, 9.47993)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(8, 2.5)
+shape = SubResource("RectangleShape2D_cank6")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

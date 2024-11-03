@@ -1,0 +1,290 @@
+[gd_scene load_steps=35 format=3 uid="uid://cp08d5mp766sl"]
+
+[ext_resource type="Texture2D" uid="uid://cbwp8oxi3xpjc" path="res://Nivel3/assets/Medieval King Pack 2/Medieval King Pack 2/Sprites/Idle.png" id="1_ggel4"]
+[ext_resource type="Texture2D" uid="uid://cu30m3ier6aro" path="res://Nivel3/assets/Medieval King Pack 2/Medieval King Pack 2/Sprites/Jump.png" id="2_fyx77"]
+[ext_resource type="Texture2D" uid="uid://bjbwabwqs4qjt" path="res://Nivel3/assets/Medieval King Pack 2/Medieval King Pack 2/Sprites/Death.png" id="2_whvm2"]
+[ext_resource type="Texture2D" uid="uid://bypchhiiahri0" path="res://Nivel3/assets/Medieval King Pack 2/Medieval King Pack 2/Sprites/Run.png" id="3_1t7fu"]
+[ext_resource type="AudioStream" uid="uid://cda7nstglg7c7" path="res://Assets/Sonidos/JumpSound.wav" id="5_0ntmt"]
+[ext_resource type="AudioStream" uid="uid://crkyt1q48in8y" path="res://Assets/Sonidos/CoinSound.wav" id="6_hn4ku"]
+[ext_resource type="AudioStream" uid="uid://cvxas2mnj4hpv" path="res://Assets/Sonidos/PickLetterSound.wav" id="7_86w5p"]
+
+[sub_resource type="GDScript" id="GDScript_w1v46"]
+resource_local_to_scene = true
+script/source = "extends CharacterBody2D
+
+var speed = 300.0
+var jump_speed = -450.0
+var gravity = 980
+
+var letras_recogidas = []
+
+func _physics_process(delta):
+	var direction = 0
+	if Input.is_action_pressed(\"move_right\"):
+		direction = 1
+	if Input.is_action_pressed(\"move_left\"):
+		direction = -1
+
+	velocity.x = direction * speed
+	salto(delta)
+	animacion()
+	move_and_slide()
+
+func animacion():
+	if velocity.x == 0:
+		$AnimatedSprite2D.play(\"Idle\")
+	elif velocity.x != 0:
+		$AnimatedSprite2D.play(\"Run\")
+		if velocity.x > 0:
+			$AnimatedSprite2D.flip_h = false
+		elif velocity.x < 0:
+			$AnimatedSprite2D.flip_h = true
+
+func salto(delta):
+	if Input.is_action_just_pressed(\"jump\") and is_on_floor():
+		print(\"'saltando\")
+		jump_sound()
+		velocity.y = -jump_speed
+	else:
+		velocity.y += gravity * delta
+
+func recolectar_letras(letra):
+	letras_recogidas.append(letra)
+	pick_letter()
+	
+func pick_letter():
+	$PickLetterSound.play()
+	$PickLetterSound.seek(0.51)
+	
+func jump_sound():
+	$Jump.play()
+	$Jump.seek(0.2)
+	
+func dead():
+	set_physics_process(false)
+	$AnimatedSprite2D.play(\"Death\")
+	await ($AnimatedSprite2D.animation_finished)
+	queue_free()
+	
+"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_igtj6"]
+atlas = ExtResource("2_whvm2")
+region = Rect2(0, 0, 160, 111)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qstg7"]
+atlas = ExtResource("2_whvm2")
+region = Rect2(160, 0, 160, 111)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6obwu"]
+atlas = ExtResource("2_whvm2")
+region = Rect2(320, 0, 160, 111)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xmhq4"]
+atlas = ExtResource("2_whvm2")
+region = Rect2(480, 0, 160, 111)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_545uq"]
+atlas = ExtResource("2_whvm2")
+region = Rect2(640, 0, 160, 111)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pev3l"]
+atlas = ExtResource("2_whvm2")
+region = Rect2(800, 0, 160, 111)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eovi6"]
+atlas = ExtResource("1_ggel4")
+region = Rect2(0, 0, 160, 111)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vx2ve"]
+atlas = ExtResource("1_ggel4")
+region = Rect2(160, 0, 160, 111)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a6c8u"]
+atlas = ExtResource("1_ggel4")
+region = Rect2(320, 0, 160, 111)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s6r6g"]
+atlas = ExtResource("1_ggel4")
+region = Rect2(480, 0, 160, 111)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k2nht"]
+atlas = ExtResource("1_ggel4")
+region = Rect2(640, 0, 160, 111)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d5i4g"]
+atlas = ExtResource("1_ggel4")
+region = Rect2(800, 0, 160, 111)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mi2k7"]
+atlas = ExtResource("1_ggel4")
+region = Rect2(960, 0, 160, 111)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f4beg"]
+atlas = ExtResource("1_ggel4")
+region = Rect2(1120, 0, 160, 111)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fwp7g"]
+atlas = ExtResource("2_fyx77")
+region = Rect2(0, 0, 160, 111)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ygdv5"]
+atlas = ExtResource("2_fyx77")
+region = Rect2(160, 0, 160, 111)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dxhbx"]
+atlas = ExtResource("3_1t7fu")
+region = Rect2(0, 0, 160, 111)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nw0f1"]
+atlas = ExtResource("3_1t7fu")
+region = Rect2(160, 0, 160, 111)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m0d8f"]
+atlas = ExtResource("3_1t7fu")
+region = Rect2(320, 0, 160, 111)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xua56"]
+atlas = ExtResource("3_1t7fu")
+region = Rect2(480, 0, 160, 111)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_um0uo"]
+atlas = ExtResource("3_1t7fu")
+region = Rect2(640, 0, 160, 111)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_swihd"]
+atlas = ExtResource("3_1t7fu")
+region = Rect2(800, 0, 160, 111)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j7ftc"]
+atlas = ExtResource("3_1t7fu")
+region = Rect2(960, 0, 160, 111)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a77kj"]
+atlas = ExtResource("3_1t7fu")
+region = Rect2(1120, 0, 160, 111)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dqkhq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_igtj6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qstg7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6obwu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xmhq4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_545uq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pev3l")
+}],
+"loop": true,
+"name": &"Death",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eovi6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vx2ve")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a6c8u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s6r6g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k2nht")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d5i4g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mi2k7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f4beg")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fwp7g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ygdv5")
+}],
+"loop": true,
+"name": &"Jump",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dxhbx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nw0f1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m0d8f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xua56")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_um0uo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_swihd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j7ftc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a77kj")
+}],
+"loop": true,
+"name": &"Run",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v3b1t"]
+size = Vector2(29.0714, 47.1428)
+
+[node name="Player" type="CharacterBody2D"]
+position = Vector2(58.954, 585.235)
+script = SubResource("GDScript_w1v46")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(-5.977, -17.3675)
+scale = Vector2(1.07471, 1.31293)
+sprite_frames = SubResource("SpriteFrames_dqkhq")
+animation = &"Run"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-7.304, 14.765)
+scale = Vector2(1.4, 1.4)
+shape = SubResource("RectangleShape2D_v3b1t")
+
+[node name="Jump" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_0ntmt")
+volume_db = 5.725
+
+[node name="CoinSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_hn4ku")
+volume_db = -10.495
+
+[node name="PickLetterSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_86w5p")

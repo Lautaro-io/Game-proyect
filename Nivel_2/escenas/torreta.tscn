@@ -1,0 +1,163 @@
+[gd_scene load_steps=10 format=3 uid="uid://dv4jerbm13lld"]
+
+[ext_resource type="Texture2D" uid="uid://nkkrj80ga4sd" path="res://tilesets vikings/Decoracion/Wall_A_02.png" id="1_pj0rs"]
+[ext_resource type="Texture2D" uid="uid://gn824ytedtjs" path="res://tilesets vikings/Fondos/TX Village Props.png" id="1_qmmg7"]
+[ext_resource type="Texture2D" uid="uid://bbl2t0d77jrpe" path="res://tilesets vikings/Decoracion/Chimney_02.png" id="2_7fsxh"]
+[ext_resource type="Texture2D" uid="uid://cb1q0ycl7i0am" path="res://tilesets vikings/Decoracion/Pillar_04.png" id="3_f6j7y"]
+[ext_resource type="Texture2D" uid="uid://bh5uhgvrm1hlr" path="res://tilesets vikings/Decoracion/Pillar_03.png" id="4_tl0ij"]
+[ext_resource type="Texture2D" uid="uid://2hn1xqkjkwv5" path="res://tilesets vikings/Decoracion/Pillar_01.png" id="5_pk2vs"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tsv5q"]
+size = Vector2(354, 28)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tte3p"]
+texture = ExtResource("1_qmmg7")
+20:30/size_in_atlas = Vector2i(2, 6)
+20:30/0 = 0
+15:28/size_in_atlas = Vector2i(1, 8)
+15:28/0 = 0
+28:14/0 = 0
+29:14/0 = 0
+29:15/0 = 0
+28:15/0 = 0
+51:23/0 = 0
+52:23/0 = 0
+54:22/0 = 0
+55:22/0 = 0
+56:23/0 = 0
+57:23/0 = 0
+57:22/0 = 0
+56:22/0 = 0
+55:23/0 = 0
+54:23/0 = 0
+61:2/size_in_atlas = Vector2i(2, 2)
+61:2/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_3k5mb"]
+sources/0 = SubResource("TileSetAtlasSource_tte3p")
+
+[node name="Torreta" type="Node2D"]
+
+[node name="Estructuras" type="Node2D" parent="."]
+
+[node name="WallA02" type="Sprite2D" parent="Estructuras"]
+position = Vector2(573.5, 148.75)
+scale = Vector2(1.09688, 0.0734375)
+texture = ExtResource("1_pj0rs")
+
+[node name="Chimney02" type="Sprite2D" parent="Estructuras"]
+position = Vector2(380, 509)
+scale = Vector2(0.460938, 0.914062)
+texture = ExtResource("2_7fsxh")
+
+[node name="Chimney03" type="Sprite2D" parent="Estructuras"]
+position = Vector2(380, 396)
+scale = Vector2(0.460938, 0.914062)
+texture = ExtResource("2_7fsxh")
+
+[node name="Chimney04" type="Sprite2D" parent="Estructuras"]
+position = Vector2(380, 282)
+scale = Vector2(0.460938, 0.914062)
+texture = ExtResource("2_7fsxh")
+
+[node name="Chimney05" type="Sprite2D" parent="Estructuras"]
+position = Vector2(380, 152.25)
+scale = Vector2(0.460938, 1.19141)
+texture = ExtResource("2_7fsxh")
+
+[node name="Chimney06" type="Sprite2D" parent="Estructuras"]
+position = Vector2(767, 509)
+scale = Vector2(0.460938, 0.914062)
+texture = ExtResource("2_7fsxh")
+
+[node name="Chimney07" type="Sprite2D" parent="Estructuras"]
+position = Vector2(767, 394)
+scale = Vector2(0.460938, 0.914062)
+texture = ExtResource("2_7fsxh")
+
+[node name="Chimney08" type="Sprite2D" parent="Estructuras"]
+position = Vector2(767, 283)
+scale = Vector2(0.460938, 0.914062)
+texture = ExtResource("2_7fsxh")
+
+[node name="Chimney09" type="Sprite2D" parent="Estructuras"]
+position = Vector2(767, 152.25)
+scale = Vector2(0.460938, 1.17578)
+texture = ExtResource("2_7fsxh")
+
+[node name="Pillar09" type="Sprite2D" parent="Estructuras"]
+position = Vector2(700.913, 126.526)
+rotation = -0.616101
+scale = Vector2(0.177476, 1.07185)
+texture = ExtResource("3_f6j7y")
+
+[node name="Pillar15" type="Sprite2D" parent="Estructuras"]
+position = Vector2(616.84, 128.365)
+rotation = 0.570723
+scale = Vector2(0.223252, 1.0392)
+texture = ExtResource("4_tl0ij")
+
+[node name="Pillar16" type="Sprite2D" parent="Estructuras"]
+position = Vector2(542.327, 130.163)
+rotation = 0.570723
+scale = Vector2(0.223252, 1.05403)
+texture = ExtResource("4_tl0ij")
+
+[node name="Pillar17" type="Sprite2D" parent="Estructuras"]
+position = Vector2(459.139, 127.898)
+rotation = 0.570723
+scale = Vector2(0.223252, 1.03054)
+texture = ExtResource("4_tl0ij")
+
+[node name="Pillar11" type="Sprite2D" parent="Estructuras"]
+position = Vector2(545.182, 130.906)
+rotation = -0.616101
+scale = Vector2(0.177476, 1.07912)
+texture = ExtResource("3_f6j7y")
+
+[node name="Pillar12" type="Sprite2D" parent="Estructuras"]
+position = Vector2(467.101, 128.38)
+rotation = -0.616101
+scale = Vector2(0.177476, 1.04991)
+texture = ExtResource("3_f6j7y")
+
+[node name="Pillar10" type="Sprite2D" parent="Estructuras"]
+position = Vector2(623, 122)
+rotation = -0.616101
+scale = Vector2(0.177476, 0.966048)
+texture = ExtResource("3_f6j7y")
+
+[node name="Pillar14" type="Sprite2D" parent="Estructuras"]
+position = Vector2(686.898, 130.831)
+rotation = 0.570723
+scale = Vector2(0.223252, 1.06644)
+texture = ExtResource("4_tl0ij")
+
+[node name="Pillar01" type="StaticBody2D" parent="Estructuras"]
+position = Vector2(574.5, 173.5)
+scale = Vector2(1.10938, 0.734375)
+
+[node name="Sprite2D" type="Sprite2D" parent="Estructuras/Pillar01"]
+texture = ExtResource("5_pk2vs")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Estructuras/Pillar01"]
+position = Vector2(-0.450684, 0.680878)
+scale = Vector2(0.901404, 1.3617)
+shape = SubResource("RectangleShape2D_tsv5q")
+
+[node name="Pillar02" type="Sprite2D" parent="Estructuras"]
+position = Vector2(574.25, 67.25)
+scale = Vector2(1.34844, 0.773437)
+texture = ExtResource("5_pk2vs")
+
+[node name="Pillar03" type="Sprite2D" parent="Estructuras"]
+position = Vector2(573.5, 135)
+scale = Vector2(1.10938, 0.167968)
+texture = ExtResource("5_pk2vs")
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_3k5mb")
+format = 2
+layer_0/tile_data = PackedInt32Array(1966100, 983040, 28, 2031636, 983040, 28, 1507348, 983040, 28, 1376276, 983040, 28, 2228242, 1835008, 14, 2293778, 1835008, 15, 2228243, 1900544, 14, 2293779, 1900544, 15, 2228245, 1835008, 14, 2293781, 1835008, 15, 2228246, 1900544, 14, 2293782, 1900544, 15, 983060, 983040, 28, 524308, 983040, 28, 327701, 3997696, 268435458, 2097179, 1310720, 30, 1703963, 1310720, 30, 1310747, 1310720, 30, 917531, 1310720, 30, 786459, 1310720, 30)
+layer_1/tile_data = PackedInt32Array(2228243, 1835008, 14, 2293779, 1835008, 15, 2228244, 1900544, 14, 2293780, 1900544, 15)
+layer_2/tile_data = PackedInt32Array(2228244, 1835008, 14, 2293780, 1835008, 15, 2228245, 1900544, 14, 2293781, 1900544, 15, 2228240, 3538944, 22, 2293776, 3407872, 23, 2228241, 3604480, 22, 2293777, 3604480, 23, 2228242, 3670016, 22, 2293778, 3670016, 23, 2228243, 3735552, 22, 2293779, 3735552, 23, 2293782, 3342336, 23, 2293783, 3407872, 23, 2293775, 3342336, 23, 2293784, 3342336, 23, 2293785, 3407872, 23)

@@ -1,0 +1,77 @@
+[gd_scene load_steps=11 format=3 uid="uid://h7bpdicfmbyp"]
+
+[ext_resource type="Texture2D" uid="uid://vxwf7myn8d7d" path="res://Nivel_2/NPCs/Idle/Idle1.png" id="1_pikis"]
+[ext_resource type="Texture2D" uid="uid://dcqthgkxj8cif" path="res://Nivel_2/NPCs/Idle/Idle2.png" id="2_2yybg"]
+[ext_resource type="Texture2D" uid="uid://dsk3wg3uw0msf" path="res://Nivel_2/NPCs/Idle/Idle3.png" id="3_5bwbe"]
+[ext_resource type="Texture2D" uid="uid://bjs3423dpyvlg" path="res://Nivel_2/NPCs/Idle/Idle4.png" id="4_mwgv7"]
+[ext_resource type="Texture2D" uid="uid://du5axffl5bc1h" path="res://Nivel_2/NPCs/Idle/Idle5.png" id="5_cjgje"]
+[ext_resource type="Texture2D" uid="uid://d3vefx18kbqww" path="res://Nivel_2/NPCs/Idle/Idle6.png" id="6_vj37t"]
+[ext_resource type="Texture2D" uid="uid://bhym1ov6ksf05" path="res://Nivel_2/NPCs/DialougeBOXES.png" id="8_my8m0"]
+[ext_resource type="FontFile" uid="uid://nnawlsf54tqa" path="res://Nivel_2/NPCs/Kaph-Regular.ttf" id="9_vjds4"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_s3sij"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_pikis")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_2yybg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_5bwbe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_mwgv7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_cjgje")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_vj37t")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 10.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ns2ta"]
+radius = 89.8053
+
+[node name="NPC2" type="Node2D"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="Animacion" type="AnimatedSprite2D" parent="StaticBody2D"]
+texture_filter = 1
+position = Vector2(-4, -9)
+scale = Vector2(1.92553, 1.73352)
+sprite_frames = SubResource("SpriteFrames_s3sij")
+animation = &"idle"
+frame = 3
+frame_progress = 0.835945
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("CircleShape2D_ns2ta")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = -528.0
+offset_top = -265.0
+offset_right = 360.0
+offset_bottom = -25.0
+texture = ExtResource("8_my8m0")
+
+[node name="Label" type="Label" parent="TextureRect"]
+layout_mode = 0
+offset_left = 126.0
+offset_top = 46.0
+offset_right = 786.0
+offset_bottom = 261.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("9_vjds4")
+text = " ¡SALUDOS AVENTURERO! SOY HEIMDALL, EL GUARDIÁN DE LOS DIOSES Y VIGILANTE DEL PUENTE BIFRÖST. TU RETO ESTÁ POR VENIR. DELANTE SE ENCUENTRA EL MAJESTUOSO YGGDRASIL, 
+EL GRAN ÁRBOL DE LA VIDA QUE CONECTA LOS NUEVE MUNDOS. EN LO MÁS ALTO SE ENCUENTRA LO QUE BUSCAS. 
+¡Buena suerte!"
+autowrap_mode = 1

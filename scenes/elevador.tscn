@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://ccyhy6vf5he08"]
+
+[ext_resource type="Texture2D" uid="uid://bui14ya25fbqk" path="res://plataforms.jpg" id="1_resuj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jc7v1"]
+size = Vector2(12, 8)
+
+[node name="elevador" type="AnimatableBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("1_resuj")
+region_enabled = true
+region_rect = Rect2(2, 32, 12, 8)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_jc7v1")

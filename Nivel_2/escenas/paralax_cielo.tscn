@@ -1,0 +1,52 @@
+[gd_scene load_steps=6 format=3 uid="uid://bxo83dvhmwvq7"]
+
+[ext_resource type="Script" path="res://Nivel_2/scripts/ScriptParallaxBackground.gd" id="1_xkdlo"]
+[ext_resource type="Texture2D" uid="uid://f2b8slqeoysb" path="res://Nivel_2/tilesets vikings/Fondos/paralax nubes/Parallax10.png" id="2_2no0p"]
+[ext_resource type="Texture2D" uid="uid://bn3gqo1wl0k4n" path="res://Nivel_2/tilesets vikings/Fondos/paralax nubes/Parallax9.png" id="3_mdy8v"]
+[ext_resource type="Texture2D" uid="uid://c4g53kvs7bq1y" path="res://Nivel_2/tilesets vikings/Fondos/paralax nubes/Parallax8.png" id="4_36atc"]
+[ext_resource type="Texture2D" uid="uid://cj0v5pefqnmv2" path="res://Nivel_2/tilesets vikings/Fondos/paralax nubes/Parallax7.png" id="5_5qrxd"]
+
+[node name="FondoParalaxCielo" type="Node2D"]
+
+[node name="ParallaxBackground2" type="ParallaxBackground" parent="."]
+script = ExtResource("1_xkdlo")
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground2"]
+motion_mirroring = Vector2(1280, 0)
+
+[node name="Parallax10" type="Sprite2D" parent="ParallaxBackground2/ParallaxLayer"]
+texture_filter = 1
+position = Vector2(640, -408.06)
+scale = Vector2(6.4, 6.43844)
+texture = ExtResource("2_2no0p")
+flip_v = true
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground2"]
+motion_scale = Vector2(1.4, 1)
+motion_mirroring = Vector2(1280, 0)
+
+[node name="Parallax9" type="Sprite2D" parent="ParallaxBackground2/ParallaxLayer2"]
+texture_filter = 1
+position = Vector2(640, -13.5)
+scale = Vector2(6.4, 6.55469)
+texture = ExtResource("3_mdy8v")
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground2"]
+motion_scale = Vector2(1.4, 1)
+motion_mirroring = Vector2(1280, 0)
+
+[node name="Parallax8" type="Sprite2D" parent="ParallaxBackground2/ParallaxLayer3"]
+texture_filter = 1
+position = Vector2(640, -521)
+scale = Vector2(6.4, 7.25)
+texture = ExtResource("4_36atc")
+
+[node name="ParallaxLayer4" type="ParallaxLayer" parent="ParallaxBackground2"]
+motion_scale = Vector2(1.3, 1)
+motion_mirroring = Vector2(1280, 0)
+
+[node name="Parallax7" type="Sprite2D" parent="ParallaxBackground2/ParallaxLayer4"]
+texture_filter = 1
+position = Vector2(695.5, -300.5)
+scale = Vector2(5.185, 6.24219)
+texture = ExtResource("5_5qrxd")

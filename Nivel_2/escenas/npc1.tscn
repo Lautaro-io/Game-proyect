@@ -1,0 +1,62 @@
+[gd_scene load_steps=7 format=3 uid="uid://45jm2shubisn"]
+
+[ext_resource type="Texture2D" uid="uid://cdgx1adk3yqig" path="res://Nivel_2/NPCs/Idle.png" id="1_6hiev"]
+[ext_resource type="Texture2D" uid="uid://bhym1ov6ksf05" path="res://Nivel_2/NPCs/DialougeBOXES.png" id="2_386hk"]
+[ext_resource type="FontFile" uid="uid://cd5swgty88c4m" path="res://Nivel_2/Player/Kaph-Regular.ttf" id="3_33i3n"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ns3d6"]
+atlas = ExtResource("1_6hiev")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pjy1m"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ns3d6")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 10.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_s2c5n"]
+radius = 74.0608
+
+[node name="NPC1" type="Node2D"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="StaticBody2D"]
+texture_filter = 1
+position = Vector2(-23, 7)
+scale = Vector2(2.63479, 2.5)
+sprite_frames = SubResource("SpriteFrames_pjy1m")
+animation = &"idle"
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(1, -2)
+shape = SubResource("CircleShape2D_s2c5n")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = -491.0
+offset_top = -239.0
+offset_right = 258.0
+offset_bottom = -10.0
+texture = ExtResource("2_386hk")
+
+[node name="Label" type="Label" parent="TextureRect"]
+layout_mode = 0
+offset_left = 120.0
+offset_top = 40.0
+offset_right = 664.0
+offset_bottom = 256.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_33i3n")
+text = "¡BIENVENIDO AVENTURERO! HAS LLEGADO A LA 
+ÉPOCA DE LOS DIOSES NÓRDICOS. TU MISIÓN ES ENCONTRAR LAS LETRAS QUE FORMAN EL NOMBRE
+SAGRADO DE ODÍN, EL SABIO PADRE DE TODO.CON
+CORAJE Y ASTUCIA,
+¡PODRÁS HALLARLAS TODAS! ¡SKÅL!"
+autowrap_mode = 1

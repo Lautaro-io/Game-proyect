@@ -1,0 +1,82 @@
+[gd_scene load_steps=12 format=3 uid="uid://dhfxybsnj04m"]
+
+[ext_resource type="Script" path="res://Cannon.gd" id="1_syvcx"]
+[ext_resource type="PackedScene" uid="uid://nxko1a8cm1v4" path="res://scenes/ball.tscn" id="2_7n8ks"]
+[ext_resource type="Texture2D" uid="uid://otp6sm3j0bse" path="res://Assets/cañon/10-Cannon/Idle.png" id="2_x67q1"]
+[ext_resource type="Texture2D" uid="uid://dxnav07k1cs3a" path="res://Assets/cañon/10-Cannon/Shoot (44x28).png" id="3_iospg"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ei382"]
+atlas = ExtResource("2_x67q1")
+region = Rect2(0, 0, 44, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ko4hm"]
+atlas = ExtResource("3_iospg")
+region = Rect2(0, 0, 44, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qaqam"]
+atlas = ExtResource("3_iospg")
+region = Rect2(44, 0, 44, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f2n1s"]
+atlas = ExtResource("3_iospg")
+region = Rect2(88, 0, 44, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mbjay"]
+atlas = ExtResource("3_iospg")
+region = Rect2(132, 0, 44, 28)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_n8ito"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ei382")
+}],
+"loop": false,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ko4hm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qaqam")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f2n1s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mbjay")
+}],
+"loop": false,
+"name": &"shoot",
+"speed": 8.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_efjk4"]
+size = Vector2(33, 29)
+
+[node name="Cannon" type="StaticBody2D"]
+script = ExtResource("1_syvcx")
+bullet = ExtResource("2_7n8ks")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_n8ito")
+animation = &"shoot"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(12.5, 4.5)
+shape = SubResource("RectangleShape2D_efjk4")
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+target_position = Vector2(-285, 0)
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(-314, -171)
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 1.5
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

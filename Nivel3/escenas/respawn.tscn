@@ -1,0 +1,34 @@
+[gd_scene load_steps=6 format=3 uid="uid://c4mnip0wixi8n"]
+
+[ext_resource type="Script" path="res://Respawn.gd" id="1_mfy0q"]
+[ext_resource type="Texture2D" uid="uid://c2wbrae51b8i2" path="res://assets/Pixel Art Platformer - Village Props v2.3.0/Texture/TX Village Props.png" id="2_px08b"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t3vi7"]
+atlas = ExtResource("2_px08b")
+region = Rect2(156, 560, 39, 56)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wr52u"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t3vi7")
+}],
+"loop": true,
+"name": &"aparecer",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3r7ty"]
+size = Vector2(29.5, 35)
+
+[node name="Respawn" type="Area2D"]
+script = ExtResource("1_mfy0q")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0.5, -4.76837e-07)
+sprite_frames = SubResource("SpriteFrames_wr52u")
+animation = &"aparecer"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1.25, 2.5)
+shape = SubResource("RectangleShape2D_3r7ty")

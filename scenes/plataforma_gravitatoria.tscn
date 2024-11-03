@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://c8sc0g143j2ru"]
+
+[ext_resource type="Texture2D" uid="uid://dwhofboskhw0q" path="res://Assets/x32-florest-tileset.png" id="1_4otvj"]
+[ext_resource type="Script" path="res://scenes/plataforma_gravitatoria.gd" id="1_cfie7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rl6m7"]
+size = Vector2(79, 19)
+
+[node name="Plataforma_gravitatoria" type="RigidBody2D"]
+gravity_scale = 0.036
+script = ExtResource("1_cfie7")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("1_4otvj")
+region_enabled = true
+region_rect = Rect2(167, 96, 82, 25)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, -2.5)
+shape = SubResource("RectangleShape2D_rl6m7")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.5
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

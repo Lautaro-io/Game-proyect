@@ -1,0 +1,136 @@
+[gd_scene load_steps=7 format=3 uid="uid://dcdn05kmjan4d"]
+
+[ext_resource type="Texture2D" uid="uid://7wanlnfop8sd" path="res://Assets/buttons_main/Basic_GUI_Bundle/BoxesBanners/Box_Orange_Rounded.png" id="1_1v36a"]
+[ext_resource type="Script" path="res://script/win_pop.gd" id="1_ss23q"]
+[ext_resource type="FontFile" uid="uid://bl8waw38hwbex" path="res://Assets/Kaph-Regular.ttf" id="2_iqjub"]
+[ext_resource type="Texture2D" uid="uid://bmj8rjgomm2pg" path="res://Assets/buttons_main/Basic_GUI_Bundle/Icons/Icon_Large_Star_SeethroughOutline.png" id="3_u3uko"]
+[ext_resource type="Texture2D" uid="uid://cflya8rhyhy8r" path="res://Assets/buttons_main/Basic_GUI_Bundle/ButtonsText/ButtonText_Small_Blank_Round.png" id="4_2wf64"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_uwb3f"]
+texture = ExtResource("1_1v36a")
+
+[node name="win_pop" type="Control"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ss23q")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Panel" type="Panel" parent="CanvasLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -125.0
+offset_top = -85.0
+offset_right = 151.0
+offset_bottom = 149.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_uwb3f")
+
+[node name="Win_text" type="Label" parent="CanvasLayer/Panel"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 53.0
+offset_top = 17.0
+offset_right = 338.0
+offset_bottom = 92.0
+scale = Vector2(0.6, 0.6)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("2_iqjub")
+theme_override_font_sizes/font_size = 30
+text = "      Nivel 
+Completado! "
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -30.0
+offset_top = -45.0
+offset_right = 285.0
+offset_bottom = 259.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("3_u3uko")
+
+[node name="HomeButton" type="TextureButton" parent="CanvasLayer/Panel"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 160.0
+offset_right = 536.0
+offset_bottom = 396.0
+scale = Vector2(0.2, 0.2)
+texture_normal = ExtResource("4_2wf64")
+stretch_mode = 3
+metadata/_edit_group_ = true
+
+[node name="Home_text" type="Label" parent="CanvasLayer/Panel/HomeButton"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 0.637179, 0.581563, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("2_iqjub")
+theme_override_font_sizes/font_size = 80
+text = "MENU"
+
+[node name="NextLevel" type="TextureButton" parent="CanvasLayer/Panel"]
+layout_mode = 0
+offset_left = 156.0
+offset_top = 156.0
+offset_right = 676.0
+offset_bottom = 392.0
+scale = Vector2(0.2, 0.2)
+texture_normal = ExtResource("4_2wf64")
+stretch_mode = 3
+metadata/_edit_group_ = true
+
+[node name="NextText" type="Label" parent="CanvasLayer/Panel/NextLevel"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 0.635294, 0.580392, 0.996078)
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("2_iqjub")
+theme_override_font_sizes/font_size = 80
+text = "NEXT
+"
+
+[connection signal="pressed" from="CanvasLayer/Panel/HomeButton" to="." method="_on_home_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/Panel/NextLevel" to="." method="_on_next_level_pressed"]

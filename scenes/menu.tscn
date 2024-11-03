@@ -1,0 +1,127 @@
+[gd_scene load_steps=11 format=3 uid="uid://cu3v6s46ye0da"]
+
+[ext_resource type="Script" path="res://scenes/menu.gd" id="1_ebqxl"]
+[ext_resource type="Texture2D" uid="uid://drjcdm1rmmvkx" path="res://Assets/Webp.net-resizeimage.png" id="2_04vqs"]
+[ext_resource type="FontFile" uid="uid://bl8waw38hwbex" path="res://Assets/Kaph-Regular.ttf" id="2_uknp5"]
+[ext_resource type="Texture2D" uid="uid://xm7jbdcc4a6r" path="res://Assets/buttons_main/PlayBtn.png" id="3_piim8"]
+[ext_resource type="Texture2D" uid="uid://b8e3doribmc0u" path="res://Assets/buttons_main/PlayClick.png" id="4_b4mnk"]
+[ext_resource type="Texture2D" uid="uid://b5xwtn4718kdo" path="res://Assets/buttons_main/ExitBtn.png" id="5_oa5m1"]
+[ext_resource type="Texture2D" uid="uid://bicf4d6i5dweo" path="res://Assets/buttons_main/ExitClick.png" id="6_tfkxo"]
+[ext_resource type="Texture2D" uid="uid://df42gjsc8cchy" path="res://Assets/buttons_main/SoundOn/Default.svg" id="8_p6ext"]
+[ext_resource type="AudioStream" uid="uid://c7v7cfu1xydiq" path="res://Assets/Sonidos/Menu_juego.wav" id="10_2mmif"]
+[ext_resource type="Texture2D" uid="uid://t8hbbc57j520" path="res://Assets/buttons_main/SoundOn/Hover.svg" id="10_445yt"]
+
+[node name="Menu" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -21.0
+offset_bottom = 5.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ebqxl")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_04vqs")
+metadata/_edit_lock_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_direction = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -122.0
+offset_top = -74.0
+offset_right = 735.0
+offset_bottom = 689.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.3, 0.3)
+theme_override_constants/separation = 30
+alignment = 1
+metadata/_edit_group_ = true
+
+[node name="StartButton" type="TextureButton" parent="VBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+texture_normal = ExtResource("3_piim8")
+texture_pressed = ExtResource("4_b4mnk")
+stretch_mode = 3
+
+[node name="ExitButton" type="TextureButton" parent="VBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+texture_normal = ExtResource("5_oa5m1")
+texture_pressed = ExtResource("6_tfkxo")
+stretch_mode = 3
+
+[node name="Title" type="Label" parent="."]
+texture_filter = 1
+layout_mode = 2
+offset_left = 76.0
+offset_top = 8.0
+offset_right = 841.0
+offset_bottom = 128.0
+grow_horizontal = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_constants/shadow_outline_size = 6
+theme_override_constants/line_spacing = 15
+theme_override_fonts/font = ExtResource("2_uknp5")
+theme_override_font_sizes/font_size = 80
+text = "Word"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Title_2" type="Label" parent="."]
+texture_filter = 1
+layout_mode = 2
+offset_left = 418.0
+offset_top = 123.0
+offset_right = 1061.0
+offset_bottom = 221.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0.505882, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 5
+theme_override_constants/shadow_outline_size = 6
+theme_override_constants/line_spacing = 15
+theme_override_fonts/font = ExtResource("2_uknp5")
+theme_override_font_sizes/font_size = 85
+text = "RUSH"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SoundButton" type="TextureButton" parent="."]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -133.0
+offset_top = 37.0
+offset_right = -43.0
+offset_bottom = 126.0
+grow_horizontal = 0
+texture_normal = ExtResource("8_p6ext")
+texture_hover = ExtResource("10_445yt")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("10_2mmif")
+autoplay = true
+
+[connection signal="pressed" from="VBoxContainer/StartButton" to="." method="_on_texture_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/ExitButton" to="." method="_on_exit_button_pressed"]
+[connection signal="pressed" from="SoundButton" to="." method="_on_sound_button_pressed"]

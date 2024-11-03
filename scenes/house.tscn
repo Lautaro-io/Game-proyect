@@ -1,0 +1,69 @@
+[gd_scene load_steps=11 format=3 uid="uid://cdg0mjmhc3gn0"]
+
+[ext_resource type="Texture2D" uid="uid://bcj1g4c4mwp2k" path="res://Assets/shop_anim.png" id="1_gyepf"]
+[ext_resource type="Script" path="res://script/house.gd" id="1_obrqc"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ajvvp"]
+atlas = ExtResource("1_gyepf")
+region = Rect2(0, 0, 118, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gqns2"]
+atlas = ExtResource("1_gyepf")
+region = Rect2(118, 0, 118, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m7pcl"]
+atlas = ExtResource("1_gyepf")
+region = Rect2(236, 0, 118, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pe5ay"]
+atlas = ExtResource("1_gyepf")
+region = Rect2(354, 0, 118, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qy6rd"]
+atlas = ExtResource("1_gyepf")
+region = Rect2(472, 0, 118, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uv7fi"]
+atlas = ExtResource("1_gyepf")
+region = Rect2(590, 0, 118, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8fgy5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ajvvp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gqns2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m7pcl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pe5ay")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qy6rd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uv7fi")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fmr7t"]
+size = Vector2(26, 82)
+
+[node name="House" type="StaticBody2D"]
+z_index = -3
+script = ExtResource("1_obrqc")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_8fgy5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-37, 23)
+shape = SubResource("RectangleShape2D_fmr7t")

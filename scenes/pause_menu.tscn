@@ -1,0 +1,75 @@
+[gd_scene load_steps=5 format=3 uid="uid://bgir6q0omdu86"]
+
+[ext_resource type="Texture2D" uid="uid://bdn6hq8rth138" path="res://Assets/buttons_main/restart.png" id="1_7njw0"]
+[ext_resource type="Script" path="res://scenes/pause_menu.gd" id="1_bk11p"]
+[ext_resource type="Texture2D" uid="uid://dxfqrwjenwh6j" path="res://Assets/buttons_main/Default@2x.png" id="2_5uo3d"]
+[ext_resource type="FontFile" uid="uid://bl8waw38hwbex" path="res://Assets/Kaph-Regular.ttf" id="4_y87ch"]
+
+[node name="PauseMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_bk11p")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer"]
+process_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -155.0
+offset_top = -95.0
+offset_right = 427.0
+offset_bottom = 263.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
+metadata/_edit_group_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+alignment = 1
+metadata/_edit_group_ = true
+
+[node name="RestartButton" type="TextureButton" parent="CanvasLayer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("1_7njw0")
+
+[node name="MenuButton" type="TextureButton" parent="CanvasLayer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("2_5uo3d")
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="CanvasLayer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 70
+alignment = 1
+
+[node name="RESTART" type="Label" parent="CanvasLayer/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("4_y87ch")
+theme_override_font_sizes/font_size = 70
+text = "RESTART"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MENU" type="Label" parent="CanvasLayer/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("4_y87ch")
+theme_override_font_sizes/font_size = 70
+text = "MENU"
+
+[connection signal="pressed" from="CanvasLayer/HBoxContainer/VBoxContainer/RestartButton" to="." method="_on_restart_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/HBoxContainer/VBoxContainer/MenuButton" to="." method="_on_menu_button_pressed"]

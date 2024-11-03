@@ -1,0 +1,32 @@
+[gd_scene load_steps=4 format=3 uid="uid://dtmy5bbmdr2o6"]
+
+[ext_resource type="Texture2D" uid="uid://c4fsh07tr3cb4" path="res://Assets/water_a_8frames.png" id="1_q2ew7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jd1i7"]
+size = Vector2(252, 79)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3uj11"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_q2ew7")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Water" type="Node2D"]
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(130, 40.5)
+shape = SubResource("RectangleShape2D_jd1i7")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(130.5, 36.25)
+scale = Vector2(1.01953, 3.17187)
+sprite_frames = SubResource("SpriteFrames_3uj11")
+frame_progress = 0.0138404

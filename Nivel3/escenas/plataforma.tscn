@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://b7ame7di8ofr2"]
+
+[ext_resource type="Texture2D" uid="uid://dlkwwn13efunv" path="res://assets/Pixel Art Platformer - Village Props v2.3.0/Texture/TX Tileset Ground.png" id="1_iv8xq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_edggn"]
+size = Vector2(86, 28)
+
+[node name="plataforma" type="AnimatableBody2D"]
+
+[node name="plataforma-pasto" type="Sprite2D" parent="."]
+position = Vector2(34.5, -1.5)
+scale = Vector2(0.946808, 1)
+texture = ExtResource("1_iv8xq")
+region_enabled = true
+region_rect = Rect2(0, 384.853, 94.8197, 31.4457)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(35, -2)
+shape = SubResource("RectangleShape2D_edggn")

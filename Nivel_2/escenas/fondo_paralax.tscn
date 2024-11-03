@@ -1,0 +1,94 @@
+[gd_scene load_steps=9 format=3 uid="uid://l05xx8d61i4c"]
+
+[ext_resource type="Texture2D" uid="uid://f2b8slqeoysb" path="res://Nivel_2/tilesets vikings/Fondos/paralax nubes/Parallax10.png" id="1_gp3gd"]
+[ext_resource type="Texture2D" uid="uid://bvgt0flsss6n" path="res://Nivel_2/tilesets vikings/Fondos/paralax forest/Forest path4.png" id="2_67okd"]
+[ext_resource type="Texture2D" uid="uid://bn3gqo1wl0k4n" path="res://Nivel_2/tilesets vikings/Fondos/paralax nubes/Parallax9.png" id="3_uusi2"]
+[ext_resource type="Texture2D" uid="uid://c4g53kvs7bq1y" path="res://Nivel_2/tilesets vikings/Fondos/paralax nubes/Parallax8.png" id="4_r7jsv"]
+[ext_resource type="Texture2D" uid="uid://cj0v5pefqnmv2" path="res://Nivel_2/tilesets vikings/Fondos/paralax nubes/Parallax7.png" id="5_m2j5d"]
+[ext_resource type="Texture2D" uid="uid://njn48pesursi" path="res://Nivel_2/tilesets vikings/Fondos/paralax nubes/Parallax3.png" id="6_l5i4s"]
+[ext_resource type="Texture2D" uid="uid://b2rhpnnpyb627" path="res://Nivel_2/tilesets vikings/Fondos/paralax nubes/Parallax2.png" id="8_gl025"]
+[ext_resource type="Texture2D" uid="uid://ds2tlrpyn1ub7" path="res://Nivel_2/tilesets vikings/Fondos/paralax forest/Forest path1.png" id="8_uej1q"]
+
+[node name="FondoParalax" type="Node2D"]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2(1280, 0)
+
+[node name="Parallax10" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+texture_filter = 1
+scale = Vector2(6.4, 6.4)
+texture = ExtResource("1_gp3gd")
+centered = false
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2(1280, 0)
+
+[node name="ForestPath4" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
+texture_filter = 1
+scale = Vector2(6.4, 6.4)
+texture = ExtResource("2_67okd")
+centered = false
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(1.3, 1)
+motion_mirroring = Vector2(1280, 0)
+
+[node name="Parallax9" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer3"]
+texture_filter = 1
+scale = Vector2(6.4, 6.4)
+texture = ExtResource("3_uusi2")
+centered = false
+
+[node name="ParallaxLayer4" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(1.2, 1)
+motion_mirroring = Vector2(1280, 0)
+
+[node name="Parallax8" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer4"]
+texture_filter = 1
+scale = Vector2(6.4, 6.4)
+texture = ExtResource("4_r7jsv")
+centered = false
+
+[node name="ParallaxLayer5" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(1.12, 1)
+motion_mirroring = Vector2(1280, 0)
+
+[node name="Parallax7" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer5"]
+texture_filter = 1
+scale = Vector2(6.4, 6.4)
+texture = ExtResource("5_m2j5d")
+centered = false
+
+[node name="ParallaxLayer6" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(1.1, 1)
+motion_mirroring = Vector2(1280, 0)
+
+[node name="Parallax3" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer6"]
+texture_filter = 1
+scale = Vector2(6.4, 5.85156)
+texture = ExtResource("6_l5i4s")
+centered = false
+
+[node name="ParallaxLayer7" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2(1280, 0)
+
+[node name="Parallax2" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer7"]
+texture_filter = 1
+position = Vector2(0, -39)
+scale = Vector2(6.4, 6.4)
+texture = ExtResource("8_gl025")
+centered = false
+
+[node name="ParallaxLayer8" type="ParallaxLayer" parent="ParallaxBackground"]
+z_index = 13
+motion_scale = Vector2(1.6, 1)
+motion_mirroring = Vector2(1280, 0)
+
+[node name="ForestPath1" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer8"]
+z_index = 13
+texture_filter = 1
+scale = Vector2(6.4, 6.4)
+texture = ExtResource("8_uej1q")
+centered = false
